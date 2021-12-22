@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <button><a href="/">Back</a></button>
+    <button><a href="/logout">Log Out</a></button>
+</div>
+<p>Welcome to <span th:text="${appName}"</span></p>
+<br>
+<br>
+<br>
+<div th:if="${customer}">
+    <form action="/transfer/process" method="post">
+        <input
+                type="hidden"
+                th:name="${_csrf.parameterName}"
+                th:value="${_csrf.token}"/>
+        <table>
+            <tbody>
+
+
+            <tr>
+                <td>Name:</td>
+                <td><span th:text="${customer.name}"</span></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><span th:text="${customer.email}"</span></td>
+            </tr>
+            <tr>
+                <td>Current balance:</td>
+                <td><span th:text="${customer.balance}"</span>TK</td>
+            </tr>
+            <tr>
+                <td>Destination Account Email:</td>
+                <td><input type="text" name="destinationEmail"></td>
+            </tr>
+            <tr>
+                <td>Transfer Amount:</td>
+                <td><input type="number" name="transferMoney"></td>
+            </tr>
+            <tr>
+                <td>Password for Confirmation:</td>
+                <td>
+                    <input type="password" name="password">
+                    <input type="hidden" name="userId" th:value="${customer.userId}">
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </form>
+</div>
+<div th:if="${status}">
+    <span th:text="${status}"</span>
+</div>
+</body>
+</html>

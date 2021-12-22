@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<div>
+    <button><a href="/logout">Log Out</a></button>
+</div>
+<body>
+<h4>Hello</h4>
+<p>Welcome to <span th:text="${appName}"</span></p>
+<br>
+<div>
+    <button><a th:href="@{/transfer}">Money Transfer</a></button>
+</div>
+<br>
+<br>
+<div th:if="${customer}">
+    <table>
+        <tbody>
+        <tr>
+            <td>Name:</td>
+            <td><span th:text="${customer.name}"</span></td>
+        </tr>
+        <tr>
+            <td>address:</td>
+            <td><span th:text="${customer.address}"</span></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><span th:text="${customer.email}"</span></td>
+        </tr>
+        <tr>
+            <td>balance:</td>
+            <td><span th:text="${customer.balance}"</span>TK</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

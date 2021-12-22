@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Registration</title>
+</head>
+<body>
+<div>
+    <button><a href="/">Back</a></button>
+    <button><a href="/logout">Log Out</a></button>
+</div>
+<!--<div>-->
+<!--    <button><a th:href="@{'/executive/' + ${executiveId}}">Back</a></button>-->
+<!--</div>-->
+<h4>Customer Registration</h4>
+<!--<form action="#" th:action="@{/add/Customer}" th:object="${customer}" method="post">-->
+<!--    <label for="name">Name</label>-->
+<!--    <input type="text" th:field="*{name}" id="name" placeholder="Name">-->
+<!--&lt;!&ndash;    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>&ndash;&gt;-->
+
+<!--    <label for="address">Address</label>-->
+<!--    <input type="text" th:field="*{address}" id="address" placeholder="address">-->
+<!--&lt;!&ndash;    <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>&ndash;&gt;-->
+
+<!--    <label for="email">Email</label>-->
+<!--    <input type="text" th:field="*{email}" id="email" placeholder="Email">-->
+<!--&lt;!&ndash;    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>&ndash;&gt;-->
+
+<!--    <label for="balance">Balance</label>-->
+<!--    <input type="number" th:field="*{balance}" id="balance" placeholder="balance">-->
+<!--&lt;!&ndash;    <span th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}"></span>&ndash;&gt;-->
+
+<!--    <label for="password">Password</label>-->
+<!--    <input type="password" th:field="*{password}" id="password" placeholder="password">-->
+<!--&lt;!&ndash;    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>&ndash;&gt;-->
+
+<!--    <label for="retypePassword">Retype Password</label>-->
+<!--    <input type="password" th:field="*{retypePassword}" id="retypePassword" placeholder="retype password">-->
+<!--&lt;!&ndash;    <span th:if="${#fields.hasErrors('retypePassword')}" th:errors="*{retypePassword}"></span>&ndash;&gt;-->
+
+<!--    <input type="submit" value="Add User">-->
+<!--</form>-->
+
+
+
+<form action="/customer/add" method="post">
+    <input
+            type="hidden"
+            th:name="${_csrf.parameterName}"
+            th:value="${_csrf.token}" />
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" placeholder="Name"><br><br>
+<!--    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>-->
+
+    <label for="address">Address</label><br>
+    <input type="text"  id="address" name="address" placeholder="address"><br><br>
+<!--    <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>-->
+
+    <label for="email">Email</label><br>
+    <input type="text"  id="email" name="email" placeholder="Email"><br><br>
+<!--    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>-->
+
+    <label for="balance">Balance</label><br>
+    <input type="number" id="balance" name="balance" placeholder="balance" value="0"><br><br>
+<!--    <span th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}"></span>-->
+
+    <label for="password">Password</label><br>
+    <input type="password" id="password" name="password" placeholder="password"><br><br>
+<!--    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>-->
+
+    <label for="retypePassword">Retype Password</label><br>
+    <input type="password" id="retypePassword" name="retypePassword" placeholder="retype password"><br><br>
+<!--    <span th:if="${#fields.hasErrors('retypePassword')}" th:errors="*{retypePassword}"></span>-->
+
+    <input type="submit" value="Add User"><br><br>
+
+    <div th:if="${status}">
+        <span th:text="${status}"</span>
+    </div>
+</form>
+</body>
+</html>

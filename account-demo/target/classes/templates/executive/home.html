@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<div>
+    <button><a href="/logout">Log Out</a></button>
+</div>
+<h3>Welcome to <span th:text="${appName}"</span></h3>
+<br>
+<div th:if="${executive}">
+    <table>
+        <tbody>
+        <tr>
+            <td>User Name:</td>
+            <td><span th:text="${executive.name}"</span></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><span th:text="${executive.email}"</span></td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<br>
+<br>
+<div>
+    <button><a th:href="@{/customer/registration}">Add Customer</a></button>
+    <button><a th:href="@{/customer/view}">View All Customers</a></button>
+</div>
+</body>
+</html>
