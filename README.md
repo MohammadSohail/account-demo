@@ -14,7 +14,7 @@
 
         username and password
 
-    Bank Executive
+4.Bank Executive
 
         Customer Add
 
@@ -26,7 +26,7 @@
 
             by customer_id
 
-4.Customer
+5.Customer
 
         Transfer Money
 
